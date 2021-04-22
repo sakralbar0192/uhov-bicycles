@@ -1,0 +1,23 @@
+body {
+  max-width: 1024px;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0 auto;
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
