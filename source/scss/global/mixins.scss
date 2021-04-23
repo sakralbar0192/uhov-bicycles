@@ -22,3 +22,28 @@
   border: 0;
   background-color: inherit;
 }
+
+@mixin interactiveFocusEffect {
+  &:focus {
+    outline: 1px dashed $accent-color;
+  }
+}
+
+@mixin mainTitlesFontStyles {
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 600px;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: $basic-color-three;
+
+  @media (max-width: $desktop-width) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  @media (max-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 41px;
+  }
+}

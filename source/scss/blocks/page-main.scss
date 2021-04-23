@@ -1,0 +1,11 @@
+.page-main {
+  padding: 150px 0;
+
+  @media (max-width: $desktop-width) {
+    padding: 7px 0;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 0;
+  }
+}

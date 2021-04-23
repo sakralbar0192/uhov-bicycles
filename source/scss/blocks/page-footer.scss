@@ -1,0 +1,126 @@
+.page-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 95px;
+
+  @media (max-width: $desktop-width) {
+    padding: 0 0 54px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 0 0 35px;
+  }
+
+  h2 {
+    @include mainTitlesFontStyles;
+    margin: 0 0 30px;
+
+    @media (max-width: $desktop-width) {
+      margin: 0 0 20px;
+    }
+
+    @media (max-width: $tablet-width) {
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+
+  p {
+    width: 555px;
+    margin: 0 0 40px;
+    font-size: 17px;
+    line-height: 31px;
+    font-weight: 400;
+    text-align: center;
+    color: rgba($basic-color-one,0.7);
+
+    @media (max-width: $desktop-width) {
+      width: 100%;
+      margin: 0 0 20px;
+    }
+
+    @media (max-width: $tablet-width) {
+      margin: 0 0 19px;
+      padding: 0 35px;
+    }
+  }
+}
+
+.page-footer__image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 40px;
+  overflow: hidden;
+
+  @media (max-width: $desktop-width) {
+    margin: 0 0 20px;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin: 0 0 25px;
+  }
+
+  img {
+    width: 957px;
+    height: 530px;
+    object-fit: cover;
+
+    @media (max-width: $desktop-width) {
+      width: 698px;
+      height: 545px;
+    }
+
+    @media (max-width: $tablet-width) {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+.page-footer__contacts {
+  @include resetListDefaultProperties;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 560px;
+
+  @media (max-width: $desktop-width) {
+    width: 555px;
+  }
+
+  @media (max-width: $tablet-width) {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
+
+.page-footer__contact-link {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgba($basic-color-one,0.5);
+
+  @media (max-width: $tablet-width) {
+    margin: 0 0 20px;
+  }
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @include interactiveFocusEffect;
+}
+
+.page-footer__svg {
+  margin: 0 15px 0 0;
+}
