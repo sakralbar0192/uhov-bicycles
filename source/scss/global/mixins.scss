@@ -30,12 +30,16 @@
 }
 
 @mixin mainTitlesFontStyles {
+  max-height: 120px;
+  padding: 0 10px;
   font-size: 30px;
   line-height: 30px;
   font-weight: 600px;
   letter-spacing: -0.5px;
   text-align: center;
   color: $basic-color-three;
+  overflow: auto;
+  scrollbar-width: none;
 
   @media (max-width: $desktop-width) {
     font-size: 24px;

@@ -159,10 +159,15 @@
   }
 
   span {
+    max-width: 340px;
+    max-height: 68px;
     font-size: 22px;
     line-height: 34px;
     font-weight: 600;
     letter-spacing: -0.5px;
+    text-align: center;
+    overflow: auto;
+    scrollbar-width: none;
   }
 }
 
