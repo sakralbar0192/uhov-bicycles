@@ -2,10 +2,10 @@
   padding: 150px 0;
 
   @media (max-width: $desktop-width) {
-    padding: 7px 0;
+    padding: 7px 0 70px;
   }
 
   @media (max-width: $tablet-width) {
-    padding: 0;
+    padding: 0 0 70px;
   }
 }

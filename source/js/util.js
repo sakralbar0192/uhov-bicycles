@@ -16,14 +16,14 @@ const toggleClasses = (firstClass, secondClass, chanchedElement, overlay) => {
 
     document.addEventListener('keydown',(evt) => {
       if (evt.keyCode === ESCAPE_KEY_CODE){
-        navigation.classList.remove(secondClass);
-        navigation.classList.add(firstClass);
+        chanchedElement.classList.remove(secondClass);
+        chanchedElement.classList.add(firstClass);
       }
     }, {once: true});
 
     overlay.addEventListener('click', () => {
-      navigation.classList.remove(secondClass);
-      navigation.classList.add(firstClass);
+      chanchedElement.classList.remove(secondClass);
+      chanchedElement.classList.add(firstClass);
     }, {once: true});
 
   }else if (chanchedElement.classList.contains(secondClass)) {

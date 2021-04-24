@@ -1,4 +1,5 @@
 import {toggleClasses} from './util';
+import './mask';
 
 const navigation = document.querySelector('#navigation');
 const navToggle = navigation.querySelector('#navigation-toggle');

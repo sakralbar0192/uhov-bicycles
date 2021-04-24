@@ -21,16 +21,16 @@
       <button class="main-header__nav-toggle" id="navigation-toggle"></button>
       <ul class="main-header__nav-list">
         <li class="main-header__nav-list-item">
-          <a href="#" class="main-header__nav-link">О нас</a>
+          <a href="#features" class="main-header__nav-link">О нас</a>
         </li>
         <li class="main-header__nav-list-item">
-          <a href="#" class="main-header__nav-link">Виды велосипедов</a>
+          <a href="#types" class="main-header__nav-link">Виды велосипедов</a>
         </li>
         <li class="main-header__nav-list-item">
-          <a href="#" class="main-header__nav-link">Видео про велосипеды</a>
+          <a href="#video" class="main-header__nav-link">Видео про велосипеды</a>
         </li>
         <li class="main-header__nav-list-item">
-          <a href="#" class="main-header__nav-link">Контакты</a>
+          <a href="#contacts" class="main-header__nav-link">Контакты</a>
         </li>
       </ul>
     </nav>
@@ -43,31 +43,31 @@
     </div>
     <form class="main-header__form" action="#" method="POST">
       <p>Заполните поля ниже и мы подберем велосипед Вашей мечты</p>
-      <din class="main-header__form-inputs-wrapper">
+      <div class="main-header__form-inputs-wrapper">
         <label class="main-header__form-label">
           <span>введите ваше имя</span>
           <input type="text" class="main-header__form-input" placeholder="Введите Ваше Имя">
         </label>
         <label class="main-header__form-label">
           <span>введите ваш номер телефона</span>
-          <input type="number" class="main-header__form-input" placeholder="Введите Ваш номер телефона">
+          <input class="main-header__form-input" id="tel-input" type="tel" placeholder="Введите Ваш номер телефона">
         </label>
-      </din>
+      </div>
       <button type="submit" class="main-header__form-button">Подобрать велосипед мечты</button>
     </form>
   </div>
 </header>
 <main class="page-main">
-  <section class="features">
+  <section class="features" id="features">
     <h2>Несколько фактов о нас</h2>
     <ul class="features__list">
-      <li class="features__item" number="01">Самый широкий выбор велосипедов!</li>
-      <li class="features__item" number="02">Доставка велосипедов по всей России!</li>
-      <li class="features__item" number="03">Большой выбор крутых аксессуаров!</li>
-      <li class="features__item" number="04">Профессиональные консультации!</li>
+      <li class="features__item" id="01">Самый широкий выбор велосипедов!</li>
+      <li class="features__item" id="02">Доставка велосипедов по всей России!</li>
+      <li class="features__item" id="03">Большой выбор крутых аксессуаров!</li>
+      <li class="features__item" id="04">Профессиональные консультации!</li>
     </ul>
   </section>
-  <section class="bicycles-types">
+  <section class="bicycles-types" id="types">
     <h2>Виды велосипедов</h2>
     <ul class="bicycles-types__gallery">
       <li class="bicycles-types__gallery-item">
@@ -99,9 +99,27 @@
       </li>
     </ul>
   </section>
+  <section class="bicycles-video" id="video">
+    <div class="bicycles-video__container">
+      <div class="bicycles-video__title-block">
+        <h2>Видео про велосипеды</h2>
+        <p>В этом видео мы подробно расскажем про особенности выбора велосипеда для себя.</p>
+      </div>
+      <div class="bicycles-video__video-block">
+        <div class="bicycles-video__video-wrapper">
+          <picture>
+            <source type="image/webp" srcset="img/bicycles-video.webp 1x, img/bicycles-video@2x.webp 2x">
+            <img src="img/bicycles-video.png" srcset="img/bicycles-video@2x.png 2x" alt="Видео о велосипедах" width="929" height="522">
+          </picture>
+        </div>
+        <button class="bicycles-video__play-button">
+          <span>играть видео</span>
+        </button>
+      </div>
+    </div>
+  </section>
 </main>
-
-<footer class="page-footer">
+<footer class="page-footer" id="contacts">
   <h2>Как нас найти?</h2>
   <p>Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
   <div class="page-footer__image-wrapper">
@@ -120,7 +138,7 @@
       </a>
     </li>
     <li>
-      <a href="tel:+7 (499) -784-684-46" class="page-footer__contact-link">
+      <a href="tel:+7(499)-784-684-46" class="page-footer__contact-link">
         <svg class="page-footer__svg page-footer__svg--tel" width="21" height="23">
           <use xlink:href="img/sprite_auto.svg#icon-phone"></use>
         </svg>

@@ -5,7 +5,7 @@
   padding: 149px 0;
   background: $additional-color-eleven;
 
-  @media (max-width: $desktop-width)  {
+  @media (max-width: $desktop-width) {
     padding: 53px 0 20px;
   }
 
@@ -13,11 +13,11 @@
     padding: 53px 0 12px;
   }
 
-  h2{
+  h2 {
     @include mainTitlesFontStyles;
     margin: 0 0 50px;
 
-    @media (max-width: $desktop-width)  {
+    @media (max-width: $desktop-width) {
       margin: 0 0 35px;
     }
 
@@ -114,7 +114,7 @@
       z-index: 2;
 
       @media (max-width: $desktop-width) {
-        content: none;;
+        content: none;
       }
     }
 
@@ -185,4 +185,3 @@
     }
   }
 }
-

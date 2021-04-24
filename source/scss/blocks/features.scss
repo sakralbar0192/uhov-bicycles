@@ -4,7 +4,7 @@
   align-items: center;
   margin: 0 0 112px;
 
-  @media (max-width: $desktop-width)  {
+  @media (max-width: $desktop-width) {
     margin: 0 0 35px;
   }
 
@@ -20,7 +20,6 @@
       margin: 0 0 35px;
     }
   }
-
 }
 
 .features__list {
@@ -60,7 +59,7 @@
   }
 
   &::before {
-    content: attr(number);
+    content: attr(id);
     margin: 0 0 15px;
     font-size: 28px;
     line-height: 38px;
