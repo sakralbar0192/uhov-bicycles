@@ -198,7 +198,6 @@
 
 .main-header__nav-link {
   display: block;
-  max-height: 32px;
   max-width: 250px;
   margin: 0 10px;
   font-size: 16px;
@@ -206,13 +205,12 @@
   letter-spacing: -0.5px;
   font-weight: 300;
   color: $basic-color-two;
-  overflow: auto;
-  scrollbar-width: none;
 
   @media (max-width: $desktop-width) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
     margin: 0 0 28px;
     padding: 17px 24px 17px 16px;
     font-size: 20px;
@@ -397,6 +395,85 @@
       margin: 0 10px 17px;
     }
   }
+
+  label {
+    width: 100%;
+    margin: 0 0 20px;
+
+    @media (max-width: $desktop-width) {
+      width: 320px;
+      margin: 0 10px 20px;
+    }
+
+    @media (max-width: $tablet-width) {
+      width: 290px;
+      margin: 0 5px 20px;
+    }
+
+    span {
+      @include visually-hidden;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 14px 30px 10px;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $additional-color-one;
+    border-radius: 4px;
+    border: 1px solid $additional-color-five;
+
+    @media (max-width: $desktop-width) {
+      padding: 14px 20px 10px;
+    }
+
+    @media (max-width: $tablet-width) {
+      padding: 14px 25px 10px;
+    }
+
+    &[type="number"] {
+      appearance: textfield;
+    }
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    @include interactiveFocusEffect;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 600;
+    text-align: center;
+    color: $basic-color-one;
+    background: $accent-color;
+    border-radius: 6px;
+    border: 0;
+
+    @media (max-width: $desktop-width) {
+      width: 320px;
+    }
+
+    @media (max-width: $tablet-width) {
+      width: 288px;
+    }
+
+    &:hover {
+      color: $basic-color-two;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    @include interactiveFocusEffect;
+  }
 }
 
 .main-header__form-inputs-wrapper {
@@ -407,83 +484,4 @@
   @media (max-width: $desktop-width) {
     width: 100%;
   }
-}
-
-.main-header__form-label {
-  width: 100%;
-  margin: 0 0 20px;
-
-  @media (max-width: $desktop-width) {
-    width: 320px;
-    margin: 0 10px 20px;
-  }
-
-  @media (max-width: $tablet-width) {
-    width: 290px;
-    margin: 0 5px 20px;
-  }
-
-  span {
-    @include visually-hidden;
-  }
-}
-
-.main-header__form-input {
-  width: 100%;
-  padding: 14px 30px 10px;
-  font-size: 15px;
-  line-height: 24px;
-  font-weight: 400;
-  color: $additional-color-one;
-  border-radius: 4px;
-  border: 1px solid $additional-color-five;
-
-  @media (max-width: $desktop-width) {
-    padding: 14px 20px 10px;
-  }
-
-  @media (max-width: $tablet-width) {
-    padding: 14px 25px 10px;
-  }
-
-  &[type="number"] {
-    appearance: textfield;
-  }
-
-  &:hover {
-    color: $accent-color;
-  }
-
-  @include interactiveFocusEffect;
-}
-
-.main-header__form-button {
-  width: 100%;
-  padding: 15px;
-  font-size: 15px;
-  line-height: 21px;
-  font-weight: 600;
-  text-align: center;
-  color: $basic-color-one;
-  background: $accent-color;
-  border-radius: 6px;
-  border: 0;
-
-  @media (max-width: $desktop-width) {
-    width: 320px;
-  }
-
-  @media (max-width: $tablet-width) {
-    width: 288px;
-  }
-
-  &:hover {
-    color: $basic-color-two;
-  }
-
-  &:active {
-    opacity: 0.5;
-  }
-
-  @include interactiveFocusEffect;
 }

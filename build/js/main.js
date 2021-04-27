@@ -1,5 +1,11 @@
 const ESCAPE_KEY_CODE = 27;
 
+const navigation = document.querySelector('#navigation');
+const navToggle = navigation.querySelector('#navigation-toggle');
+const overlay = navigation.querySelector('#navigation-overlay');
+const navOpenClass = 'main-header__nav--open';
+const navCloseClass = 'main-header__nav--close'
+
 /**
  * Функция при вызове проверяет наличие одного из двух переданных классов у изменяемого элемента
  * и при наличии одного из них заменяет один класс на другой и выполняет соответствующую переданную функцию
@@ -32,4 +38,15 @@ const toggleClasses = (firstClass, secondClass, chanchedElement, overlay) => {
   }
 }
 
-export {toggleClasses};
+//добавляет навигационному меню класс для отображения закрытого меню
+navigation.classList.add(navCloseClass);
+
+//добавляет кнопке открытия/закрытия меню обработчик события, который меняет классы у навигационного меню
+navToggle.addEventListener('click',()=> {
+  toggleClasses(navCloseClass,navOpenClass,navigation,overlay)
+})
+
+//инициирует маску для валидации поля ввода телефона
+const telInput = document.querySelector('#tel-input');
+Inputmask().mask(telInput);
+
