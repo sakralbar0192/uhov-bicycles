@@ -1,3 +1,6 @@
+'use strict';
+/* global Inputmask:readonly */
+
 const ESCAPE_KEY_CODE = 27;
 
 const navigation = document.querySelector('#navigation');
@@ -49,4 +52,3 @@ navToggle.addEventListener('click',()=> {
 //инициирует маску для валидации поля ввода телефона
 const telInput = document.querySelector('#tel-input');
 Inputmask().mask(telInput);
-

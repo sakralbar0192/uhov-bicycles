@@ -1,3 +1,4 @@
+'use strict';
 /* global Inputmask:readonly */
 
 const ESCAPE_KEY_CODE = 27;
