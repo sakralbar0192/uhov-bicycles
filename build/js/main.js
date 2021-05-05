@@ -7,7 +7,9 @@ const navigation = document.querySelector('#navigation');
 const navToggle = navigation.querySelector('#navigation-toggle');
 const overlay = navigation.querySelector('#navigation-overlay');
 const navOpenClass = 'main-header__nav--open';
-const navCloseClass = 'main-header__nav--close'
+const navCloseClass = 'main-header__nav--close';
+const form = document.querySelector('#form');
+const submitButton = form.querySelectorAll('#submit-button');
 
 /**
  * Функция при вызове проверяет наличие одного из двух переданных классов у изменяемого элемента
@@ -52,3 +54,15 @@ navToggle.addEventListener('click',()=> {
 //инициирует маску для валидации поля ввода телефона
 const telInput = document.querySelector('#tel-input');
 Inputmask().mask(telInput);
+
+//сохраняет данные формы в локальное хранилище после отправки формы
+form.addEventListener('submit', ()=> {
+  if (window.localStorage) {
+    const inputFields = form.querySelectorAll('#input-field');
+    inputFields.forEach(field => {
+      const name = field.getAttribute('name');
+      const value = field.value;
+      localStorage.setItem(name, value);
+    })
+  }
+})
