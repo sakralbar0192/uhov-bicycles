@@ -2,6 +2,7 @@
 /* global Inputmask:readonly */
 
 const ESCAPE_KEY_CODE = 27;
+const TEL_INPUT_ERROR_MESSAGE = 'введите номер полностью';
 
 const pageBody = document.querySelector('#body');
 const navigation = document.querySelector('#navigation');
@@ -10,6 +11,7 @@ const overlay = navigation.querySelector('#navigation-overlay');
 const navOpenClass = 'main-header__nav--open';
 const navCloseClass = 'main-header__nav--close';
 const form = document.querySelector('#form');
+const telInput = form.querySelector('#tel-input');
 
 /**
  * Функция при вызове проверяет наличие одного из двух переданных классов у изменяемого элемента
@@ -54,17 +56,22 @@ navToggle.addEventListener('click',()=> {
 })
 
 //инициирует маску для валидации поля ввода телефона
-const telInput = document.querySelector('#tel-input');
 Inputmask().mask(telInput);
 
 //сохраняет данные формы в локальное хранилище после отправки формы
-form.addEventListener('submit', ()=> {
-  if (window.localStorage) {
-    const inputFields = form.querySelectorAll('#input-field');
-    inputFields.forEach(field => {
-      const name = field.getAttribute('name');
-      const value = field.value;
-      localStorage.setItem(name, value);
-    })
+form.addEventListener('submit', (evt)=> {
+  if (telInput.inputmask.unmaskedvalue().length != 10) {
+    evt.preventDefault();
+    telInput.setCustomValidity(TEL_INPUT_ERROR_MESSAGE);
+  }else {
+    telInput.setCustomValidity('');
+    if (window.localStorage) {
+      const inputFields = form.querySelectorAll('#input-field');
+      inputFields.forEach(field => {
+        const name = field.getAttribute('name');
+        const value = field.value;
+        localStorage.setItem(name, value);
+      })
+    }
   }
 })
