@@ -2,7 +2,7 @@
   grid-column: 1/-1;
   grid-row: 1/-1;
   display: grid;
-  grid-template-columns: 1fr 70px 440px 440px 70px 1fr;
+  grid-template-columns: 1fr 440px 440px 1fr;
   grid-template-rows: auto 197px auto 1fr;
   align-items: start;
   grid-gap: 27px 0;
@@ -23,20 +23,24 @@
 
 .main-header__nav {
   grid-row: 1/2;
-  grid-column: 2/-2;
+  grid-column: 1/-1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   @media (max-width: $desktop-width) {
-    grid-column: 1/-1;
     justify-self: end;
     width: 100%;
+    margin: 0 0 50px;
   }
 
   &--close {
     @media (max-width: $desktop-width) {
+      margin: 0;
+
       .main-header__nav-toggle {
+        display: grid;
         align-self: flex-end;
         background: $accent-color;
         border: 0;
@@ -81,10 +85,12 @@
       display: grid;
       grid-template-rows: 1fr;
       justify-content: stretch;
+      margin: 0;
 
       .main-header__nav-toggle {
         grid-column: 1/-1;
         grid-row: 1/2;
+        display: grid;
         align-self: start;
         justify-self: end;
         z-index: 2;
@@ -105,6 +111,7 @@
     @media (max-width: $tablet-width) {
       position: fixed;
       height: 100vh;
+      overflow: scroll;
       z-index: 3;
 
       .main-header__nav-overlay {
@@ -139,7 +146,6 @@
 
   @media (max-width: $desktop-width) {
     align-self: flex-end;
-    display: grid;
     align-items: center;
     justify-content: center;
     width: 50px;
@@ -189,13 +195,14 @@
   @include resetListDefaultProperties;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width: 100%;
-  padding: 20px 20px 10px;
+  justify-content: flex-start;
+  max-width: 1020px;
+  padding: 20px 0 10px;
 
   @media (max-width: $desktop-width) {
     flex-direction: column;
-    padding: 50px 0;
+    padding: 100px 0 50px;
+    width: 100%;
     background: $basic-color-two;
   }
 }
@@ -203,7 +210,7 @@
 .main-header__nav-link {
   display: block;
   max-width: 250px;
-  margin: 0 10px;
+  margin: 0 70px;
   font-size: 16px;
   line-height: 32px;
   letter-spacing: -0.5px;
@@ -251,9 +258,8 @@
 }
 
 .main-header__logo-block {
-  grid-column: 3/4;
+  grid-column: 2/3;
   grid-row: 3/4;
-  cursor: pointer;
 
   @media (max-width: $desktop-width) {
     grid-column: 1/-1;
@@ -262,16 +268,6 @@
     align-self: start;
     margin: 25px 0 0 21px;
   }
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
-
-  @include interactiveFocusEffect;
 }
 
 .main-header__hero-image-block {
@@ -289,12 +285,11 @@
   }
 
   img {
-    width: 1440px;
-    height: 825px;
+    width: 100vw;
+    height: auto;
     object-fit: cover;
 
     @media (max-width: $desktop-width) {
-      width: 768px;
       height: 340px;
     }
 
@@ -306,7 +301,7 @@
 
 .main-header__title-block {
   grid-row: 4/-1;
-  grid-column: 3/4;
+  grid-column: 2/3;
   display: grid;
   row-gap: 25px;
 
@@ -365,7 +360,7 @@
 
 .main-header__form {
   grid-row: 3/-1;
-  grid-column: 4/5;
+  grid-column: 3/4;
   justify-self: end;
   display: flex;
   flex-direction: column;
@@ -490,10 +485,7 @@
 
 .main-header__form-inputs-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
-  @media (max-width: $desktop-width) {
-    width: 100%;
-  }
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }

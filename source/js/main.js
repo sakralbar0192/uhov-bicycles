@@ -3,13 +3,13 @@
 
 const ESCAPE_KEY_CODE = 27;
 
+const pageBody = document.querySelector('#body');
 const navigation = document.querySelector('#navigation');
 const navToggle = navigation.querySelector('#navigation-toggle');
 const overlay = navigation.querySelector('#navigation-overlay');
 const navOpenClass = 'main-header__nav--open';
 const navCloseClass = 'main-header__nav--close';
 const form = document.querySelector('#form');
-const submitButton = form.querySelectorAll('#submit-button');
 
 /**
  * Функция при вызове проверяет наличие одного из двух переданных классов у изменяемого элемента
@@ -24,6 +24,7 @@ const toggleClasses = (firstClass, secondClass, chanchedElement, overlay) => {
   if (chanchedElement.classList.contains(firstClass)) {
     chanchedElement.classList.remove(firstClass);
     chanchedElement.classList.add(secondClass);
+    pageBody.classList.add('non-scrolling-block');
 
     document.addEventListener('keydown',(evt) => {
       if (evt.keyCode === ESCAPE_KEY_CODE){
@@ -40,6 +41,7 @@ const toggleClasses = (firstClass, secondClass, chanchedElement, overlay) => {
   }else if (chanchedElement.classList.contains(secondClass)) {
     chanchedElement.classList.remove(secondClass);
     chanchedElement.classList.add(firstClass);
+    pageBody.classList.remove('non-scrolling-block');
   }
 }
 
