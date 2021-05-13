@@ -51,9 +51,10 @@
 }
 
 .page-footer__map-wrapper {
-  display: grid;
+  position: relative;
+  display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
   width: 957px;
   height: 530px;
   margin: 0 0 35px;
@@ -72,8 +73,6 @@
 }
 
 .page-footer__image-wrapper {
-  grid-column: 1/-1;
-  grid-row: 1/-1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,20 +93,19 @@
 }
 
 .page-footer__iframe-wrapper {
-  grid-column: 1/-1;
-  grid-row: 1/-1;
-  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
+  margin: auto;
+  z-index: 1;
 
   iframe {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-
-    @media (max-width: $tablet-width) {
-      object-fit: contain;
-    }
   }
 }
 

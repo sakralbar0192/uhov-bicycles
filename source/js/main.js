@@ -60,11 +60,7 @@ Inputmask().mask(telInput);
 
 //сохраняет данные формы в локальное хранилище после отправки формы
 form.addEventListener('submit', (evt)=> {
-  if (telInput.inputmask.unmaskedvalue().length != 10) {
-    evt.preventDefault();
-    telInput.setCustomValidity(TEL_INPUT_ERROR_MESSAGE);
-  }else {
-    telInput.setCustomValidity('');
+  if (telInput.inputmask.unmaskedvalue().length === 10) {
     if (window.localStorage) {
       const inputFields = form.querySelectorAll('#input-field');
       inputFields.forEach(field => {
@@ -73,5 +69,14 @@ form.addEventListener('submit', (evt)=> {
         localStorage.setItem(name, value);
       })
     }
+  }else {
+    evt.preventDefault();
+    telInput.setCustomValidity(TEL_INPUT_ERROR_MESSAGE);
+    telInput.addEventListener('change', ()=> {
+      telInput.setCustomValidity('');
+    }, {once: true})
   }
 })
+
+
+
